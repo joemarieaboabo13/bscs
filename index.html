@@ -7,7 +7,7 @@
     <title>Ling Ling Motor Shop</title>
 
     <style>
-       
+        /* Basic page design */
         * {
             box-sizing: border-box;
         }
@@ -27,6 +27,27 @@
             );
         }
 
+        /* Log Out button in the upper-right corner */
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 18px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .logout:hover {
+            background: white;
+            color: #333;
+        }
+
+        
         h1 {
             color: white;
             padding-top: 15vh;
@@ -34,6 +55,7 @@
             font-size: clamp(26px, 4vw, 45px);
         }
 
+        /* Navigation buttons */
         .buttons {
             display: flex;
             justify-content: center;
@@ -74,8 +96,16 @@
                 padding: 10px 16px;
                 font-size: 14px;
             }
+
+            .logout {
+                top: 12px;
+                right: 12px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
         }
 
+     
         @media (min-width: 481px) and (max-width: 1024px) {
             h1 {
                 padding-top: 15vh;
@@ -87,7 +117,7 @@
             }
         }
 
-      
+       
         @media (min-width: 1025px) {
             h1 {
                 padding-top: 18vh;
@@ -102,10 +132,13 @@
 
 <body>
 
-   
+  
+    <a href="log in page.html" class="logout">Log Out</a>
+
+    <!-- Welcome message -->
     <h1>Welcome to Ling Ling Motor Shop</h1>
 
-
+    <!-- Navigation buttons -->
     <div class="buttons">
         <a href="Products.html">Products</a>
         <a href="Contact.html">Contact</a>
@@ -114,6 +147,3 @@
 
 </body>
 </html>
-
-
-  
