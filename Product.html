@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Motorcycle Parts Products</title>
 
     <style>
@@ -14,20 +15,22 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
+            overflow-x: hidden;
         }
 
-        /* Back button in the upper-right corner */
+        /* Back button */
         .back-button {
             display: block;
             width: fit-content;
             margin-left: auto;
+            margin-bottom: 20px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 9px 16px;
             border-radius: 5px;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .back-button:hover {
@@ -37,90 +40,135 @@
         h1 {
             text-align: center;
             color: #333;
-            margin: 20px 0 30px;
-            font-size: clamp(24px, 4vw, 36px);
+            font-size: clamp(22px, 3vw, 32px);
+            margin: 10px 0 25px;
         }
 
+        /* Responsive product layout */
         .products {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit, minmax(min(100%, 200px), 1fr)
-            );
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            width: 100%;
             max-width: 1200px;
-            margin: auto;
+            margin: 0 auto;
         }
 
+        /* Product card */
         .product {
             min-width: 0;
             background-color: white;
-            padding: 20px;
+            padding: 12px;
             text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+        }
+
+        /* FIXED IMAGE SIZE */
+        .product img {
+            display: block;
+            width: 100%;
+            height: 140px;
+            object-fit: contain;
+            margin: 0 auto 10px;
         }
 
         .product h2 {
             color: #333;
-            font-size: 20px;
+            font-size: 16px;
+            line-height: 1.4;
+            overflow-wrap: break-word;
+            margin: 10px 0;
         }
 
         .product p {
             color: #555;
+            margin: 10px 0;
         }
 
         .price {
             color: #007bff !important;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
         }
 
-        button {
+        .product button {
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 9px 12px;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 13px;
             max-width: 100%;
         }
 
-        button:hover {
+        .product button:hover {
             background-color: #0056b3;
         }
 
-        @media (max-width: 480px) {
+        /* Tablets and small laptops */
+        @media (min-width: 600px) {
             body {
-                padding: 12px;
+                padding: 20px;
             }
 
             .products {
-                gap: 12px;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 18px;
             }
 
             .product {
-                padding: 12px 8px;
+                padding: 16px;
             }
 
-            .product h2 {
-                font-size: 16px;
-            }
-
-            button {
-                padding: 9px 12px;
-                font-size: 13px;
-            }
-
-            .back-button {
-                padding: 9px 15px;
-                font-size: 14px;
+            .product img {
+                height: 170px;
             }
         }
 
-        @media (max-width: 320px) {
+        /* Desktop and large laptops */
+        @media (min-width: 900px) {
             .products {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .product img {
+                height: 190px;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 350px) {
+            body {
+                padding: 8px;
+            }
+
+            .products {
+                gap: 8px;
+            }
+
+            .product {
+                padding: 8px 5px;
+            }
+
+            .product img {
+                height: 100px;
+            }
+
+            .product h2 {
+                font-size: 13px;
+            }
+
+            .price {
+                font-size: 14px;
+            }
+
+            .product button {
+                padding: 8px 7px;
+                font-size: 12px;
             }
         }
     </style>
@@ -135,14 +183,14 @@
     <div class="products">
 
         <div class="product">
-            <image src="tire.jpg" alt="Motorcycle Tire">
+            <img src="tire.jpg" alt="Motorcycle Tire">
             <h2>Motorcycle Tire</h2>
             <p class="price">₱1,500</p>
             <button>Buy Now</button>
         </div>
 
         <div class="product">
-            <image src="pad.jpg" alt="Motorcyle Brake pad">
+            <img src="pad.jpg" alt="Motorcycle Brake Pad">
             <h2>Brake Pad</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
@@ -200,4 +248,3 @@
 
 </body>
 </html>
-
