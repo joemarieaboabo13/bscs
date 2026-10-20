@@ -17,35 +17,46 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-
-            padding: 100px 15px 30px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* BIG BLUE BACK BUTTON */
-        .back-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
+        /* NAVIGATION BAR */
+        .navbar {
+            width: 100%;
             background-color: #0866ff;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar a {
             color: white;
-            padding: 18px 35px;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 22px;
+            font-size: 17px;
             font-weight: bold;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
+            padding: 12px 18px;
+            border-radius: 7px;
             transition: 0.3s;
         }
 
-        .back-button:hover {
+        .navbar a:hover {
             background-color: #0047cc;
-            transform: scale(1.05);
+        }
+
+        .navbar a.active {
+            background-color: white;
+            color: #0866ff;
+        }
+
+        /* MAIN CONTENT */
+        .main-container {
+            min-height: calc(100vh - 65px);
+            padding: 40px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* CONTACT CARD */
@@ -92,8 +103,18 @@
 
         /* TABLET */
         @media (max-width: 768px) {
-            body {
-                padding: 110px 20px 35px;
+            .navbar {
+                padding: 12px;
+                gap: 5px;
+            }
+
+            .navbar a {
+                padding: 12px 14px;
+                font-size: 15px;
+            }
+
+            .main-container {
+                padding: 35px 18px;
             }
 
             .contact-card {
@@ -120,21 +141,25 @@
 
         /* CELLPHONE */
         @media (max-width: 480px) {
-            body {
-                padding: 100px 12px 25px;
+            .navbar {
+                padding: 12px 8px;
+                justify-content: center;
+                gap: 3px;
             }
 
-            .back-button {
-                top: 15px;
-                right: 15px;
-                padding: 14px 24px;
-                font-size: 18px;
-                border-radius: 8px;
+            .navbar a {
+                padding: 12px 10px;
+                font-size: 13px;
+                border-radius: 6px;
+            }
+
+            .main-container {
+                min-height: calc(100vh - 55px);
+                padding: 30px 12px;
             }
 
             .contact-card {
                 width: 100%;
-                max-width: none;
                 padding: 28px 20px;
                 border-radius: 14px;
             }
@@ -160,33 +185,64 @@
                 line-height: 1.7;
             }
         }
+
+        /* VERY SMALL PHONES */
+        @media (max-width: 340px) {
+            .navbar {
+                gap: 0;
+                padding: 10px 4px;
+            }
+
+            .navbar a {
+                padding: 11px 7px;
+                font-size: 12px;
+            }
+
+            .contact-card {
+                padding: 24px 15px;
+            }
+
+            .contact-info {
+                padding: 18px 13px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <a href="index.html" class="back-button">Back</a>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="Products.html">PRODUCTS</a>
+        <a href="About.html">ABOUT</a>
+    </nav>
 
-    <div class="contact-card">
+    <!-- CONTACT CONTENT -->
+    <main class="main-container">
 
-        <h2>Contact Us</h2>
+        <div class="contact-card">
 
-        <div class="contact-info">
-            <h4>Location</h4>
-            <p>Linamon, Lanao del Norte, Philippines</p>
+            <h2>Contact Us</h2>
+
+            <div class="contact-info">
+                <h4>Location</h4>
+                <p>Linamon, Lanao del Norte, Philippines</p>
+            </div>
+
+            <div class="contact-info">
+                <h4>Cellphone Number</h4>
+                <p>0936-161-1581</p>
+            </div>
+
+            <div class="contact-info">
+                <h4>Email Address</h4>
+                <p>ManilynBagolos@gmail.com</p>
+            </div>
+
         </div>
 
-        <div class="contact-info">
-            <h4>Cellphone Number</h4>
-            <p>0936-161-1581</p>
-        </div>
-
-        <div class="contact-info">
-            <h4>Email Address</h4>
-            <p>ManilynBagolos@gmail.com</p>
-        </div>
-
-    </div>
+    </main>
 
 </body>
 </html>
