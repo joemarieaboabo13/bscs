@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@
             overflow-x: hidden;
         }
 
-        /* NAVIGATION BAR */
+        
         .navbar {
             display: flex;
             justify-content: flex-start;
@@ -28,7 +29,12 @@
             gap: 10px;
             width: 100%;
             padding: 15px 25px;
-            background: linear-gradient(135deg, #003b8e, #0866ff, #00bfa6);
+            background: linear-gradient(
+                135deg,
+                #003b8e,
+                #0866ff,
+                #00bfa6
+            );
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
@@ -53,7 +59,7 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
-        /* PAGE CONTENT */
+        
         .container {
             padding: 15px;
         }
@@ -65,7 +71,7 @@
             margin: 20px 0 25px;
         }
 
-        /* PRODUCT GRID */
+        
         .products {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -75,7 +81,7 @@
             margin: 0 auto;
         }
 
-        /* PRODUCT CARD */
+        
         .product {
             min-width: 0;
             display: flex;
@@ -116,7 +122,11 @@
         }
 
         .product button {
-            background: linear-gradient(135deg, #0866ff, #00a896);
+            background: linear-gradient(
+                135deg,
+                #0866ff,
+                #00a896
+            );
             color: white;
             border: none;
             padding: 11px 15px;
@@ -129,10 +139,14 @@
         }
 
         .product button:hover {
-            background: linear-gradient(135deg, #0047cc, #008577);
+            background: linear-gradient(
+                135deg,
+                #0047cc,
+                #008577
+            );
         }
 
-        /* TABLET */
+        
         @media (min-width: 600px) {
             .container {
                 padding: 20px;
@@ -222,7 +236,7 @@
 
 <body>
 
-    <!-- NAVIGATION BAR -->
+    
     <nav class="navbar">
         <a href="index.html">HOME</a>
         <a href="About.html">ABOUT</a>
