@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Motorcycle Parts Products</title>
 
@@ -18,66 +19,67 @@
             overflow-x: hidden;
         }
 
-    
+        /* BACK BUTTON */
         .back-button {
             display: block;
             width: fit-content;
             margin-left: auto;
             margin-bottom: 20px;
-            background-color: #007bff;
+            background-color: #0866ff;
             color: white;
             text-decoration: none;
-            padding: 9px 16px;
-            border-radius: 5px;
-            font-size: 14px;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
         }
 
         .back-button:hover {
-            background-color: #0056b3;
+            background-color: #0047cc;
         }
 
         h1 {
             text-align: center;
             color: #333;
-            font-size: clamp(22px, 3vw, 32px);
+            font-size: clamp(24px, 4vw, 36px);
             margin: 10px 0 25px;
         }
 
-        
+        /* PRODUCT GRID */
         .products {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
+            gap: 15px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        
+        /* PRODUCT CARD */
         .product {
             min-width: 0;
             background-color: white;
             padding: 12px;
             text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
             overflow: hidden;
         }
 
-        
+        /* BIGGER PRODUCT PHOTOS */
         .product img {
             display: block;
             width: 100%;
-            height: 140px;
+            height: 200px;
             object-fit: contain;
-            margin: 0 auto 10px;
+            margin: 0 auto 12px;
         }
 
         .product h2 {
             color: #333;
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.4;
-            overflow-wrap: break-word;
+            overflow-wrap: anywhere;
             margin: 10px 0;
         }
 
@@ -87,27 +89,27 @@
         }
 
         .price {
-            color: #007bff !important;
+            color: #0866ff !important;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .product button {
-            background-color: #007bff;
+            background-color: #0866ff;
             color: white;
             border: none;
-            padding: 9px 12px;
-            border-radius: 5px;
+            padding: 11px 15px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 13px;
-            max-width: 100%;
+            font-size: 14px;
+            width: 100%;
         }
 
         .product button:hover {
-            background-color: #0056b3;
+            background-color: #0047cc;
         }
 
-        
+        /* TABLET */
         @media (min-width: 600px) {
             body {
                 padding: 20px;
@@ -115,31 +117,43 @@
 
             .products {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
-                gap: 18px;
-            }
-
-            .product {
-                padding: 16px;
-            }
-
-            .product img {
-                height: 170px;
-            }
-        }
-
-        
-        @media (min-width: 900px) {
-            .products {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
                 gap: 20px;
             }
 
+            .product {
+                padding: 18px;
+            }
+
             .product img {
-                height: 190px;
+                height: 230px;
+            }
+
+            .product h2 {
+                font-size: 19px;
+            }
+
+            .price {
+                font-size: 20px;
+            }
+
+            .product button {
+                font-size: 16px;
             }
         }
 
-        
+        /* LAPTOP AND PC */
+        @media (min-width: 1000px) {
+            .products {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 22px;
+            }
+
+            .product img {
+                height: 250px;
+            }
+        }
+
+        /* SMALL CELLPHONES */
         @media (max-width: 350px) {
             body {
                 padding: 8px;
@@ -150,23 +164,23 @@
             }
 
             .product {
-                padding: 8px 5px;
+                padding: 8px;
             }
 
             .product img {
-                height: 100px;
+                height: 150px;
             }
 
             .product h2 {
-                font-size: 13px;
-            }
-
-            .price {
                 font-size: 14px;
             }
 
+            .price {
+                font-size: 15px;
+            }
+
             .product button {
-                padding: 8px 7px;
+                padding: 9px 5px;
                 font-size: 12px;
             }
         }
@@ -175,7 +189,7 @@
 
 <body>
 
-    <a href="index.html" class="back-button">Back</a>
+    <a href="index.html" class="back-button"> Back</a>
 
     <h1>Motorcycle Parts</h1>
 
@@ -196,125 +210,132 @@
         </div>
 
         <div class="product">
-            <img src="cxhain.jpg" alt="Chain">
+            <img src="cxhain.jpg" alt="Motorcycle Chain">
             <h2>Motorcycle Chain</h2>
             <p class="price">₱800</p>
             <button>Buy Now</button>
         </div>
 
         <div class="product">
-            <h2>Battery</h2>
             <img src="battery.jpg" alt="Battery">
+            <h2>Battery</h2>
             <p class="price">₱1,200</p>
             <button>Buy Now</button>
         </div>
 
         <div class="product">
-            <h2>Side Mirror</h2>
             <img src="mirror.jpg" alt="Side Mirror">
+            <h2>Side Mirror</h2>
             <p class="price">₱350</p>
             <button>Buy Now</button>
         </div>
 
         <div class="product">
+            <img src="headlight.jpg" alt="LED Headlight">
             <h2>LED Headlight</h2>
-            <img src="headlight.jpg" alt=" Led Headlights">
             <p class="price">₱650</p>
             <button>Buy Now</button>
         </div>
 
         <div class="product">
-            <h2>Air Filter</h2>
             <img src="filter.jpg" alt="Air Filter">
+            <h2>Air Filter</h2>
             <p class="price">₱300</p>
             <button>Buy Now</button>
         </div>
 
         <div class="product">
-            <h2>Engine Oil</h2>
             <img src="oil.jpg" alt="Engine Oil">
+            <h2>Engine Oil</h2>
             <p class="price">₱550</p>
             <button>Buy Now</button>
         </div>
-     
+
         <div class="product">
             <img src="cable.jpg" alt="Throttle Cable">
             <h2>Throttle Cable</h2>
             <p class="price">₱180</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
             <img src="sparkplug.jpg" alt="Spark Plug">
             <h2>Spark Plug</h2>
             <p class="price">₱120</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
             <img src="horn.jpg" alt="Horn">
             <h2>Horn</h2>
             <p class="price">₱200</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
             <img src="signal.jpg" alt="Signal Lights">
             <h2>Signal Lights</h2>
             <p class="price">₱350</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
             <img src="foot.jpg" alt="Footrest">
             <h2>Footrest</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
-            <img src="set.jpg" alt="Set Cover">
-            <h2>Set Cover</h2>
+            <img src="set.jpg" alt="Seat Cover">
+            <h2>Seat Cover</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
             <img src="shoe.jpg" alt="Brake Shoe">
             <h2>Brake Shoe</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
         </div>
-        
+
         <div class="product">
             <img src="lever.jpg" alt="Brake and Clutch Lever">
             <h2>Brake and Clutch Lever</h2>
             <p class="price">₱400</p>
             <button>Buy Now</button>
         </div>
-         <div class="product">
+
+        <div class="product">
             <img src="stand.jpg" alt="Side Stand">
             <h2>Side Stand</h2>
             <p class="price">₱250</p>
             <button>Buy Now</button>
         </div>
-         <div class="product">
+
+        <div class="product">
             <img src="tail.jpg" alt="Tail Light">
             <h2>Tail Light</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
         </div>
-         <div class="product">
+
+        <div class="product">
             <img src="tire.jpg" alt="Tire">
             <h2>Tire</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
         </div>
-         <div class="product">
+
+        <div class="product">
             <img src="grip.jpg" alt="Handle Grip">
             <h2>Handle Grip</h2>
             <p class="price">₱450</p>
             <button>Buy Now</button>
         </div>
+
+    </div>
+
 </body>
 </html>
