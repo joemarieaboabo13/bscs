@@ -1,100 +1,288 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aurora Login</title>
 
     <style>
-        <style>
-        body {
-            margin:0;
-            nain-height: 100vh;
-            background-image: url("aurora.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            bacground-attachment: fixed;
-            font-family: Arial,sans-serif;
+        * {
+            box-sizing: border-box;
         }
-    
 
         body {
             margin: 0;
             min-height: 100vh;
+            min-height: 100svh;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
-            padding: 15px;
-
-            background: linear-gradient(
-                135deg,
-                #001f3f,
-                #008080,
-                #7fffd4
-            );
+            padding: 25px 16px;
+            overflow-x: hidden;
+            background: #020b24;
+            position: relative;
         }
 
+        /* Aurora background image */
+        .background {
+            position: fixed;
+            inset: -3%;
+            z-index: -2;
+            background-image: url("aurora.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: scale(1.05);
+            animation: scenery 18s ease-in-out infinite alternate;
+        }
+
+        /* Glowing aurora overlay */
+        .background::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(0, 255, 180, 0.20),
+                    rgba(0, 70, 255, 0.15),
+                    rgba(160, 0, 255, 0.20)
+                );
+            background-size: 200% 200%;
+            animation: auroraGlow 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes scenery {
+            from {
+                transform: scale(1.05);
+            }
+            to {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes auroraGlow {
+            0% {
+                background-position: 0% 50%;
+                opacity: 0.5;
+            }
+            100% {
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+        }
+
+        /* Large glass login box */
         .login-box {
             width: 100%;
-            max-width: 350px;
-            padding: 35px 30px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 18px;
+            max-width: 480px;
+            padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: white;
+
+            background: rgba(15, 55, 110, 0.30);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 28px;
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 0 30px rgba(0, 220, 255, 0.25),
+                inset 0 0 25px rgba(255, 255, 255, 0.08);
+        }
+
+        .logo {
+            font-size: 45px;
+            margin-bottom: 10px;
+            color: #9effff;
+            text-shadow: 0 0 18px #00eaff;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0f5ff;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
         }
 
         input {
+            display: block;
             width: 100%;
-            padding: 14px;
-            margin: 12px 0;
-            border: 1px solid #b5d2ed;
-            border-radius: 10px;
+            min-width: 0;
+            padding: 17px;
             font-size: 16px;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 10px;
-            background: #008c9e;
             color: white;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
+
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 15px;
+            outline: none;
         }
 
-        button:hover {
-            background: #006b78;
+        input::placeholder {
+            color: #f0f5ff;
+        }
+
+        input:focus {
+            border-color: #54ffff;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+        }
+
+        .login-button {
+            display: block;
+            width: 100%;
+            padding: 17px;
+            margin-top: 28px;
+
+            background: linear-gradient(
+                110deg,
+                #00a9e8,
+                #00d9b5
+            );
+
+            color: white;
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: bold;
+            border: 1px solid #6fffff;
+            border-radius: 15px;
+            box-shadow: 0 0 18px rgba(0, 255, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+        }
+
+        .footer {
+            margin-top: 28px;
+            font-size: 14px;
+            color: #e5faff;
+        }
+
+        /* Phone screen adjustment */
+        @media (max-width: 480px) {
+            body {
+                padding: 18px 14px;
+            }
+
+            .login-box {
+                max-width: 100%;
+                padding: 32px 20px;
+                border-radius: 23px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .logo {
+                font-size: 38px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+
+            input {
+                padding: 16px;
+                font-size: 16px;
+            }
+
+            .login-button {
+                padding: 16px;
+                font-size: 18px;
+            }
+        }
+
+        /* Short phone screens */
+        @media (max-height: 650px) {
+            body {
+                align-items: flex-start;
+            }
+
+            .login-box {
+                margin: 10px 0;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+
+            .subtitle {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Respect reduced-motion settings */
+        @media (prefers-reduced-motion: reduce) {
+            .background,
+            .background::after {
+                animation: none;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <div class="background"></div>
+
     <div class="login-box">
-        <form action="#" method="post">
 
-            <input
-                type="text"
-                name="marie"
-                placeholder="Username"
-                required
-            >
+        <div class="logo">⌁</div>
 
-            <input
-                type="password"
-                name="12345"
-                placeholder="Password"
-                required
-            >
+        <h1>Login</h1>
 
-            <button type="submit"><a href="index.html">Log In</a></button>
+        <p class="subtitle">
+            Welcome back!<br>
+            Please log in to your account.
+        </p>
+
+        <form action="index.html" method="get">
+
+            <div class="input-group">
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="login-button">
+                Log In →
+            </button>
 
         </form>
+
+        <div class="footer">
+        
+        </div>
+
     </div>
 
 </body>
